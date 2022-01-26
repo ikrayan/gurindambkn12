@@ -1,0 +1,33 @@
+DirectoryIndex index.php
+
+IndexIgnore */*
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+#RewriteRule ^login$ pages/login.php [L]
+#RewriteRule ^daftar$ pages/signup.php [L]
+#RewriteRule ^loginfailed$ pages/logcheck.php [L]
+#RewriteRule ^lostpass$ pages/forgotpass.php [L]
+#RewriteRule ^landing$ pages/media.php [L]
+#RewriteRule ^sessionout$ pages/session_out.php [L]
+#RewriteRule ^signout$ pages/logout.php [L]
+#RewriteRule ^visitor$ api/ws_tamu.php [L]
+
+# disable directory browsing
+Options All -Indexes
+
+# PREVENT FOLDER LISTING
+IndexIgnore *
+
+#Options +FollowSymLinks
+</IfModule>
+
+#<Files ~ “^w+.(gif|jpe?g|png)$”>
+#	order deny,allow
+#	allow from all
+#</Files>
+
